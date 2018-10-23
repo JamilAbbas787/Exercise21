@@ -25,11 +25,11 @@ namespace Exercise21
                 {
                     Console.Write("Enter a word: ");
                     array[arrayCount] = Console.ReadLine();
-                    
+                    arrayCount ++;
                     
                 }
 
-                arrayCount ++;
+                
             } while (authorization);
 
             Console.Write($"{userInput}");
