@@ -13,10 +13,11 @@ namespace Exercise21
 
             Console.Write("Enter a word: \t");
             string userInput = Console.ReadLine();
-            string[] array = new string [] {};
-            bool authorization;
+            string[] array = new string [1];
+            bool authorization = true;
             int arrayCount = 0;
-            do
+
+            while(authorization)
             {
                 Console.Write("Would you like to enter another word (y/n)?    ");
                 String continueEntering = Console.ReadLine();
@@ -25,18 +26,15 @@ namespace Exercise21
                 {
                     Console.Write("Enter a word: ");
                     array[arrayCount] = Console.ReadLine();
-                    arrayCount ++;
-                    
-                }
+                    Array.Resize(ref array, array.Length + 1);
+                    arrayCount++;
+                }               
+            }
 
-                
-            } while (authorization);
-
-            Console.Write($"{userInput}");
-            //Console.Write($" {array}");
+            Console.Write($"{userInput} ");
             foreach (var item in array)
             {
-                Console.Write($" {array}");
+                Console.Write(item + " ");            
             }
             Console.ReadKey();
         }
